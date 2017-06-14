@@ -1,3 +1,5 @@
+@import 'variables'
+
 html,
 body
   height: 100%
@@ -36,31 +38,32 @@ body
   position: absolute
   a
     color: white
+    display: block
     text-decoration: none
     font-size: 2em
     letter-spacing: .2em
     text-align: center
+  a:hover
+    color: $green
   #ov-link
     position: absolute
-    top: 50%
-    width: calc(50% - 120px)
-    text-align: right
-  #sleep-link
-    position: absolute
-    height: calc(50% + 150px)
     width: 100%
-    bottom: 0
-  #vereniging-link
-    position: absolute
     top: calc(50% + 130px)
+  #sleep-link
     width: 100%
-    left: 0
+    position: absolute
+    top: calc(50% - 170px)
   #vragen-link
+    top: calc(50% - 10px)
     position: absolute
-    position: absolute
-    top: 50%
-    width: calc(50% + 270px)
+    width: calc(50% - 170px)
     text-align: right
+  #vereniging-link
+    top: calc(50% - 10px)
+    position: absolute
+    width: calc(50% - 170px)
+    left: calc(50% + 170px)
+    text-align: left
 
 
 .video
