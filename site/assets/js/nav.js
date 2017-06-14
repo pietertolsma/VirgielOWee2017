@@ -7,14 +7,18 @@ $(document).ready(function(){
 
     if (Math.abs(offsetX) < 100 && Math.abs(offsetY) < 100) {
       $(".compass").css({
-        'background' : 'black'
+        'background' : '#44d0a6',
+        'opacity' : '0.65'
       });
-      $("#compass").hide();
+      $("#compass").fadeOut(200);
+      $(".play-button").fadeIn(200);
     } else {
       $(".compass").css({
-        'background' : 'white'
+        'background' : 'none',
+        'opacity' : '1'
       });
-      $("#compass").show();
+      $(".play-button").fadeOut(0);
+      $("#compass").fadeIn(200);
     }
 
     angle = 180 * Math.atan(offsetX / offsetY) / Math.PI;
