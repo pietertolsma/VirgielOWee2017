@@ -3,8 +3,12 @@
   <head>
     <link rel="stylesheet" href="assets/style/main.min.css">
     <link rel="stylesheet" href="assets/style/index.min.css">
+
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/nav.js"></script>
   </head>
   <body>
+    <div class="overlay"></div>
     <video id="my-video" class="video" autoplay="autoplay" loop="loop" muted="" width="300" height="150">
       <source src="assets/video/demo.mp4" type="video/mp4" />
       <source src="media/demo.ogv" type="video/ogg" />
@@ -12,7 +16,7 @@
     </video><!-- /video -->
     <div class="compass">
       <div class="base-image">
-        <img width="200px" height="200px" src="assets/img/logo.png" />
+        <img id="compass" width="200px" height="200px" src="assets/img/logo.png" />
       </div>
     </div>
   </body>
