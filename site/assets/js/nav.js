@@ -38,6 +38,7 @@ $(document).ready(function(){
     mainMenu = false;
   });
 
+  var rotation = 0;
   $("body").mousemove(function(event){
     if (mainMenu) {
       x = event.pageX;
@@ -65,7 +66,14 @@ $(document).ready(function(){
       if (offsetY > 0) {
         angle += 180;
       }
-      $("#compass").css({'transform': 'rotate('+ -angle + 'deg)'});
+
+      var aR = rotation % 360;
+      if (aR < 0) { aR += 360; }
+      if ( aR < 180 && (angle > (aR + 180)) ) { rotation -= 360; }
+      if ( aR >= 180 && (angle <= (aR - 180)) ) { rotation += 360; }
+      rotation += (angle - aR);
+
+      $("#compass").css({'transform': 'rotate('+ -rotation + 'deg)', 'transition': '200ms ease all', 'transition': '200ms linear all'}); //Still a bit buggy when hovering over the 0 deg title
     }
   });
 
