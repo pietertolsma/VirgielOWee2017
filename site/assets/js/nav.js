@@ -6,6 +6,7 @@ $(document).ready(function(){
     $(".main-container").css({
       'top' : '-50%'
     });
+    $(".overlay").css({'opacity' : '1'})
     $("#title").fadeOut(200);
     mainMenu = false;
   });
@@ -14,6 +15,7 @@ $(document).ready(function(){
     $(".main-container").css({
       'top' : '50%'
     });
+    $(".overlay").css({'opacity' : '1'})
     $("#title").fadeOut(200);
     mainMenu = false;
   });
@@ -22,6 +24,7 @@ $(document).ready(function(){
     $(".main-container").css({
       'left' : '-50%'
     });
+    $(".overlay").css({'opacity' : '1'})
     $("#title").fadeOut(200);
     mainMenu = false;
   });
@@ -30,6 +33,7 @@ $(document).ready(function(){
     $(".main-container").css({
       'left' : '50%'
     });
+    $(".overlay").css({'opacity' : '1'})
     $("#title").fadeOut(200);
     mainMenu = false;
   });
@@ -80,6 +84,7 @@ $(document).ready(function(){
                 'top' : '0',
                 'left' : '0'
               });
+              $(".overlay").css({'opacity' : '0.75'})
               $("#title").fadeIn(200);
               mainMenu = true;
               e.preventDefault();
