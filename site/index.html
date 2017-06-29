@@ -11,8 +11,8 @@
     <script src="assets/js/nav.js"></script>
   </head>
   <body>
-    <div class="overlay"></div>
     <div class="main-container">
+      <div class="overlay"></div>
       <video id="my-video" class="video" autoplay="autoplay" loop="loop" muted="" width="300" height="150">
         <source src="assets/video/demo2.mov" type="video/mp4" />
         <source src="media/demo.ogv" type="video/ogg" />
@@ -38,7 +38,31 @@
         <!-- Other pages -->
             <iframe src="northPage.html" class="northPage"></iframe>
             <iframe src="eastPage.html" class="eastPage"></iframe>
-            <iframe src="southPage.html" class="southPage"></iframe>
+            <div class="southPage south-container">
+                <div class="child">
+                  <a href="vereniging.html">
+                  <h2>Vereniging</h2>
+                  <div class="south-overlay"></div>
+                  <img src="assets/img/vereniging.jpeg" />
+                  </a>
+                </div>
+                <div class="child">
+                  <div class="south-overlay"></div>
+                  <img src="assets/img/sport.jpg" />
+                  <h2>Sport</h2>
+                </div>
+                <div class="child">
+                  <h2>Cultuur</h2>
+                  <div class="south-overlay"></div>
+                  <img src="assets/img/cultuur.jpeg" />
+                </div>
+                <div class="child">
+                  <h2>Gezelschappen</h2>
+                  <div class="south-overlay"></div>
+                  <img src="assets/img/gezelschappen.jpg" />
+                </div>
+              </div>
+            </div>
             <iframe src="westPage.html" class="westPage"></iframe>
       </div>
     </div>
