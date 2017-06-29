@@ -2,19 +2,31 @@
   <head>
     <title>Virgiel OWee 2017</title>
 
+    <script type="text/javascript">
+      if (screen.width <= 800) {
+        window.location = "m/index.html";
+      }
+    </script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="assets/style/main.min.css">
     <link rel="stylesheet" href="assets/style/YouTubePopUp.css">
+
     <link rel="stylesheet" href="assets/style/index.min.css">
 
     <script src="assets/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript"  src='http://cdn.renderedfont.com/js/renderedfont-0.8.min.js#free'></script>
     <script src="assets/js/nav.js"></script>
   </head>
+
+
   <body>
-    <div class="overlay"></div>
     <div class="main-container">
+      <div class="overlay"></div>
       <video id="my-video" class="video" autoplay="autoplay" loop="loop" muted="" width="300" height="150">
-        <source src="assets/video/demo1.mp4" type="video/mp4" />
+        <source src="assets/video/demo2.mov" type="video/mp4" />
         <source src="media/demo.ogv" type="video/ogg" />
         <source src="media/demo.webm" type="video/webm" />
       </video><!-- /video -->
@@ -25,20 +37,44 @@
             <polygon points="70, 55 70, 145 145, 100" fill="#fff"/>
           </svg>
           <img id="ring" width="400px" height="400px" src="assets/img/compass.svg" />
-          <img id="compass" width="200px" height="200px" src="assets/img/arrow.svg" />
+          <img id="compass" width="200px" height="200px" src="assets/img/pijltjelos-07.svg" />
         </div><!-- /base-image -->
       </div><!-- /compass -->
       <h1 id="title" class="bebas title">Virgiel</h1>
       <div class="links bebas">
-        <div class="over"><a href="#" id="over-link">Over Virgiel</a></div>
-        <div class="sleep"><a href="#" id="sleep-link">Sleep-inn</a></div>
-        <div class="vragen"><a href="#" id="vragen-link">Vragen?</a></div>
-        <div class="programma"><a href="#" id="programma-link">Programma</a></div>
+        <div class="south"><a href="#" id="south-link">Over Virgiel</a></div>
+        <div class="north"><a href="#" id="north-link">Programma</a></div>
+        <div class="west"><a href="#" id="west-link">Sleep-inn</a></div>
+        <div class="east"><a href="#" id="east-link">Vragen?</a></div>
 
         <!-- Other pages -->
             <iframe src="northPage.html" class="northPage"></iframe>
             <iframe src="eastPage.html" class="eastPage"></iframe>
-            <iframe src="southPage.html" class="southPage"></iframe>
+            <div class="southPage south-container">
+                <div class="child">
+                  <a href="vereniging.html">
+                  <h2>Vereniging</h2>
+                  <div class="south-overlay"></div>
+                  <img src="assets/img/vereniging.jpeg" />
+                  </a>
+                </div>
+                <div class="child">
+                  <div class="south-overlay"></div>
+                  <img src="assets/img/sport.jpg" />
+                  <h2>Sport</h2>
+                </div>
+                <div class="child">
+                  <h2>Cultuur</h2>
+                  <div class="south-overlay"></div>
+                  <img src="assets/img/cultuur.jpeg" />
+                </div>
+                <div class="child">
+                  <h2>Gezelschappen</h2>
+                  <div class="south-overlay"></div>
+                  <img src="assets/img/gezelschappen.jpg" />
+                </div>
+              </div>
+            </div>
             <iframe src="westPage.html" class="westPage"></iframe>
       </div>
     </div>

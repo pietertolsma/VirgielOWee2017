@@ -2,7 +2,8 @@
 $(document).ready(function(){
 
   curView = 0
-  $("#sleep-link").click(function(event){
+
+  $("#north-link").click(function(event){
     if (curView == 0) {
       $(".main-container").css({
         'top' : '50%'
@@ -14,7 +15,7 @@ $(document).ready(function(){
     }
   });
 
-  $("#programma-link").click(function(event){
+  $("#east-link").click(function(event){
     if (curView == 0) {
       $(".main-container").css({
         'left' : '-50%'
@@ -26,7 +27,7 @@ $(document).ready(function(){
     }
   });
 
-  $("#over-link").on("click", function(event){
+  $("#south-link").on("click", function(event){
     if (curView == 0) {
       $(".main-container").css({
         'top' : '-50%'
@@ -38,7 +39,7 @@ $(document).ready(function(){
     }
   });
 
-  $("#vragen-link").click(function(event){
+  $("#west-link").click(function(event){
     if (curView == 0) {
       $(".main-container").css({
         'left' : '50%'
@@ -49,6 +50,12 @@ $(document).ready(function(){
       curView = 4
     }
   });
+
+  // $(".links").click(function(event){
+  //   if (curView != 0) {
+  //      resetToMenu();
+  //   }
+  // });
 
   // COMPASS EVENT: The compass should follow the mouse
   var rotation = 0;
@@ -91,33 +98,34 @@ $(document).ready(function(){
     }
   });
 
+function resetToMenu() {
+    console.log("Resetting menu, curview: " + curView);
+
+    $(".main-container").css({
+      'top' : '0',
+      'left' : '0'
+    });
+    $(".overlay").css({'opacity' : '0.75'})
+    $("#title").fadeIn(200);
+
+    if (curView == 1) {
+      $(".northPage").css({'top' : 'calc(-100% + 280px)'})
+    }
+    if (curView == 2) {
+      $(".eastPage").css({'right' : 'calc(-100% + 440px)'})
+    }
+    if (curView == 3) {
+      $(".southPage").css({'bottom' : 'calc(-100% + 280px)'})
+    }
+    if (curView == 4) {
+      $(".westPage").css({'left' : 'calc(-100% + 440px)'})
+    }
+
+    curView = 0
+}
+
 
 (function ( $ ) {
-
-    function resetToMenu() {
-      $(".main-container").css({
-        'top' : '0',
-        'left' : '0'
-      });
-      $(".overlay").css({'opacity' : '0.75'})
-      $("#title").fadeIn(200);
-
-      if (curView == 1) {
-        $(".northPage").css({'top' : 'calc(-100% + 280px)'})
-      }
-      if (curView == 2) {
-        $(".eastPage").css({'right' : 'calc(-100% + 440px)'})
-      }
-      if (curView == 3) {
-        $(".southPage").css({'bottom' : 'calc(-100% + 280px)'})
-      }
-      if (curView == 4) {
-        $(".westPage").css({'left' : 'calc(-100% + 440px)'})
-      }
-
-
-      curView = 0
-    }
 
     $.fn.YouTubePopUp = function(options) {
 
@@ -126,7 +134,7 @@ $(document).ready(function(){
         }, options );
 
         $(this).on('click', function (e) {
-            if (!(curView == 0)) {
+            if (curView != 0) {
               resetToMenu();
               e.preventDefault();
               return false;
