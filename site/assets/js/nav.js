@@ -3,7 +3,7 @@ $(document).ready(function(){
 
   curView = 0
 
-  $("#sleep-link").click(function(event){
+  $("#north-link").click(function(event){
     if (curView == 0) {
       $(".main-container").css({
         'top' : '50%'
@@ -15,7 +15,7 @@ $(document).ready(function(){
     }
   });
 
-  $("#programma-link").click(function(event){
+  $("#east-link").click(function(event){
     if (curView == 0) {
       $(".main-container").css({
         'left' : '-50%'
@@ -27,7 +27,7 @@ $(document).ready(function(){
     }
   });
 
-  $("#over-link").on("click", function(event){
+  $("#south-link").on("click", function(event){
     if (curView == 0) {
       $(".main-container").css({
         'top' : '-50%'
@@ -39,7 +39,7 @@ $(document).ready(function(){
     }
   });
 
-  $("#vragen-link").click(function(event){
+  $("#west-link").click(function(event){
     if (curView == 0) {
       $(".main-container").css({
         'left' : '50%'
