@@ -6,9 +6,11 @@ body
 
 #wall_1
   background: url('../img/cultuur.jpeg') repeat
+  background-size: cover
   background-attachment: fixed
 #wall_2
   background: url('../img/vereniging.jpeg') repeat
+  background-size: cover
   background-attachment: fixed
 
 .navigation
@@ -30,6 +32,9 @@ body
     font-size: 2em
     letter-spacing: .1em
     margin: 20px
+    transition: color .2s
+    &:hover
+      color: gray !important
     &:visited
       color: white
   img
