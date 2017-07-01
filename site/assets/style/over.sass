@@ -13,6 +13,45 @@ body
   background-size: cover
   background-attachment: fixed
 
+#sport_wall_1
+  background: url('../img/sport/dopie2.jpg') repeat
+  background-size: cover
+  background-attachment: fixed
+
+#sport_wall_2
+  background: url('../img/sport/taurus2.jpg') repeat
+  background-size: cover
+  background-attachment: fixed
+
+#sport_wall_3
+  background: url('../img/sport/tenn.jpg') repeat
+  background-size: cover
+  background-attachment: fixed
+
+#sport_wall_4
+  background: url('../img/sport/svrc.jpg') repeat
+  background-size: cover
+  background-attachment: fixed
+
+#sport_wall_5
+  background: url('../img/sport/yeti.jpg') repeat
+  background-size: cover
+  background-attachment: fixed
+.subnavigation
+  text-align: center
+  width: 100%
+  background-color: $dark_green
+  padding: 10px
+  a
+    color: white
+    text-decoration: none
+    font-family: "Bebas Neue"
+    letter-spacing: .1em
+    font-size: 1.4em
+    margin: 0 20px
+    transition: color .3s
+    &:hover
+      color: gray
 .navigation
   width: 100%
   text-align: center
@@ -25,6 +64,8 @@ body
     display: inline-block
     width: calc(50% - 150px)
     text-align: left
+  .active
+    color: gray !important
   a
     font-family: "Bebas Neue"
     color: white
@@ -40,6 +81,10 @@ body
   img
     width: 200px
     height: auto
+    transition: all .3s
+    &:hover
+      transform: rotate(-10deg)
+      opacity: 0.7
 
 .content
   margin: 0
@@ -74,3 +119,17 @@ body
     padding: 20px
     margin: 0
     color: #fffdea
+
+.footer
+  width: 100%
+  margin: 0
+  text-align: center
+  padding: 40px 0
+  color: white
+  font-size: 1.3em
+  font-family: sans-serif
+  a
+    color: white
+    transition: all .2s
+    &:hover
+      color: gray
