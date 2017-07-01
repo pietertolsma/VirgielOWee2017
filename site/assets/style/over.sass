@@ -60,10 +60,19 @@ body
     width: 200px
     width: calc(50% - 150px)
     text-align: right
+    @media screen and (max-width: 500px)
+      display: block
+      width: 100%
+      text-align: center
+      margin-top: 100px
   .right-wing
     display: inline-block
     width: calc(50% - 150px)
     text-align: left
+    @media screen and (max-width: 500px)
+      display: block
+      width: 100%
+      text-align: center
   .active
     color: gray !important
   a
