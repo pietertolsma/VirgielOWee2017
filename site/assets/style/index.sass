@@ -47,7 +47,7 @@ body
 .title
   z-index: 4
   position: absolute
-  bottom: 60px
+  bottom: 0px
   left: calc(50% - 250px)
   text-align: center
   margin: 0 auto
@@ -130,6 +130,18 @@ body
   top: 50%
   left: 50%
 
+.icon
+  margin-left: 0px
+  margin-right: 0px
+  padding-left: 0px
+  padding-right: 0px
+
+#socialmedia
+  z-index: 5
+  position: absolute
+  left: 85%
+  top: 90%
+
 #compass
   position: absolute
   top: 0
@@ -167,7 +179,7 @@ body
   .south-overlay
     position: absolute
     background-color: #44d0a6
-    opacity: .7
+    opacity: .5
     width: 25%
     z-index: 5
     height: 100%
@@ -181,7 +193,7 @@ body
     color: white
     text-align: center
     font-size: 2.3em
-    top: calc(50% - 25px)
+    top: calc(50% - 60px)
   img
     position: absolute
     z-index: -1
@@ -192,3 +204,13 @@ body
   &:hover img
     width: 30%
     height: 120%
+
+
+body::-webkit-scrollbar
+    width: 1em
+
+body::-webkit-scrollbar-track
+  background-color: white
+
+body::-webkit-scrollbar-thumb
+  background-color: $green

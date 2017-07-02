@@ -8,10 +8,10 @@ $(document).ready(function(){
       $(".main-container").css({
         'top' : '50%'
       });
-      $(".overlay").css({'opacity' : '1'})
-      $(".northPage").css({'top' : '-50%'})
+      $(".overlay").css({'opacity' : '1'});
+      $(".northPage").css({'top' : '-50%'});
       $("#title").fadeOut(250);
-      curView = 1
+      curView = 1;
     }
   });
 
@@ -20,8 +20,8 @@ $(document).ready(function(){
       $(".main-container").css({
         'left' : '-50%'
       });
-      $(".overlay").css({'opacity' : '1'})
-      $(".eastPage").css({'right' : '-50%'})
+      $(".overlay").css({'opacity' : '1'});
+      $(".eastPage").css({'right' : '-50%'});
       $("#title").fadeOut(250);
       curView = 2
     }
@@ -33,7 +33,6 @@ $(document).ready(function(){
         'top' : '-50%'
       });
       $(".overlay").css({'opacity' : '1'})
-      $(".southPage").css({'bottom' : '-50%'})
       $("#title").fadeOut(250);
       curView = 3
     }
