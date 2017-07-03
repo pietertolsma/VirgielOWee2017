@@ -1,1 +1,1 @@
-@font-face{font-family:'Bebas-Neue';src:url("../assets/fonts/BebasNeue.otf") format("opentype")}html,body,div,h1,p,a,video{margin:0;padding:0}.bebas{font-family:'Bebas-Neue', Arial}iframe{visibility:hidden}body{font-family:bebas;background-color:#44d0a6;font-family:sans-serif;color:#fff}
+@font-face{font-family:'HP-simplified-light';src:url("../fonts/hp-simplified-light.ttf")}@font-face{font-family:'Bebas-Neue';src:url("../fonts/BebasNeue.otf") format("opentype")}body{background-color:#44d0a6;overflow-x:hidden}iframe{visibility:hidden}a{text-decoration:none;color:#fff}
