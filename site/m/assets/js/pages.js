@@ -7,9 +7,9 @@ $(document).ready(function(){
       $(".mobile-container").css({
         'left' : '-100%'
       });
-      $(".navbar").css({
-        'top' : '0%'
-      });
+      // $(".navbar").css({
+      //   'top' : '0%'
+      // });
       curView = 3
     }
   });
@@ -21,9 +21,9 @@ $(document).ready(function(){
       $(".mobile-container").css({
         'left' : '0%'
       });
-      $(".navbar").css({
-        'top' : '-10%'
-      });
+      // $(".navbar").css({
+      //   'top' : '-10%'
+      // });
       curView = 0
     }
   })
