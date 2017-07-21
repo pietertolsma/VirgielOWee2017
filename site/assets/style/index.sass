@@ -12,14 +12,23 @@ body
   top: 0px
   transition: top 1s, left 1s, right 1s, bottom 1s
 
-#sponsor1
+.sponsor1
+  opacity: 0.8
+  height: 65px
+  width: 204px
+
+  transition: opacity .2s
+
+.sponsor1:hover
+  opacity: 1
+
+.sponsors
   position: absolute
   z-index: 40
-  height: 100px
-  top: 10px
-  width: 350px
-  left: calc(50% - 175px)
-  opacity: 0.8
+  opacity: 1
+  transition: opacity .2s
+  left: 2%
+  bottom: 5%
 
 .content
   position: relative
@@ -145,8 +154,11 @@ body
   padding-left: 0px
   padding-right: 0px
   cursor: hand
-  transition: opacity .5s
+  transition: opacity .3s
   opacity: 0.8
+  height: 60px
+  width: 60px
+
 .icon:hover
   opacity: 0.4
   cursor: pointer
@@ -154,8 +166,8 @@ body
 #socialmedia
   z-index: 5
   position: absolute
-  left: 85%
-  top: 90%
+  right: 5%
+  bottom: 5%
 
 #compass
   position: absolute
