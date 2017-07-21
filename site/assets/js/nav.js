@@ -8,6 +8,9 @@ $(document).ready(function(){
       $(".main-container").css({
         'top' : '50%'
       });
+      $('.virgielfm').css({
+        'opacity' : '0'
+      });
       $(".overlay").css({'opacity' : '1'});
       $(".northPage").css({'top' : '-50%'});
       $("#title").fadeOut(250);
@@ -19,6 +22,9 @@ $(document).ready(function(){
     if (curView == 0) {
       $(".main-container").css({
         'left' : '-50%'
+      });
+      $('.virgielfm').css({
+        'opacity' : '0'
       });
       $(".overlay").css({'opacity' : '1'});
       $(".eastPage").css({'right' : '-50%'});
@@ -32,6 +38,9 @@ $(document).ready(function(){
       $(".main-container").css({
         'top' : '-50%'
       });
+      $('.virgielfm').css({
+        'opacity' : '0'
+      });
       $(".overlay").css({'opacity' : '1'})
       $("#title").fadeOut(250);
       curView = 3
@@ -42,6 +51,9 @@ $(document).ready(function(){
     if (curView == 0) {
       $(".main-container").css({
         'left' : '50%'
+      });
+      $('.virgielfm').css({
+        'opacity' : '0'
       });
       $(".overlay").css({'opacity' : '1'})
       $(".westPage").css({'left' : '-50%'})
@@ -103,6 +115,9 @@ function resetToMenu() {
     $(".main-container").css({
       'top' : '0',
       'left' : '0'
+    });
+    $('.virgielfm').css({
+      'opacity' : '1'
     });
     $(".overlay").css({'opacity' : '0.75'})
     $("#title").fadeIn(200);
