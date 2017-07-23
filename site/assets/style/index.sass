@@ -202,6 +202,7 @@ body
 .child
   width: 25%
   overflow: hidden
+  display: inline-block
   a
     font-size: 1em
   .south-overlay
@@ -223,15 +224,16 @@ body
     font-size: 2.3em
     top: calc(50% - 60px)
   img
-    position: absolute
     z-index: -1
-    width: 25%
     height: 100%
+    width: 100%
     object-fit: cover
     -webkit-transition: all .6s ease
+    display: block
   &:hover img
-    width: 30%
-    height: 120%
+    -moz-transform: scale(1.1)
+    -webkit-transform: scale(1.1)
+    transform: scale(1.1)
 
 .virgielfm
   position: fixed
