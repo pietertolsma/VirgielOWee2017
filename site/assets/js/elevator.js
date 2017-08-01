@@ -261,5 +261,5 @@ var Elevator = function(options) {
 
     init(options);
 };
-
-module.exports = Elevator;
+//
+// module.exports = Elevator;
