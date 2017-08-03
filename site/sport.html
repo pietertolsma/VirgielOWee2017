@@ -4,13 +4,14 @@
     <link rel="icon" href="assets\img\icon.png">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta charset="utf-8">
     <link rel="stylesheet" href="assets/style/YouTubePopUp.css">
     <link rel="stylesheet" href="assets/style/main.min.css">
     <link rel="stylesheet" href="assets/style/over.min.css">
 
     <script src="assets/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript"  src='http://cdn.renderedfont.com/js/renderedfont-0.8.min.js#free'></script>
+    <script type="text/javascript" src="assets/js/elevator.js"></script>
   </head>
   <body>
     <a name="top"></a>
@@ -27,7 +28,7 @@
       <a href="index.html"><img src="assets/img/kompas.png"></img></a>
       <div class="right-wing">
         <a href="cultuur.html">Cultuur</a>
-        <a href="gezel.html">Gezelschappen</a>
+        <a href="gezelschappen.html">Gezelschappen</a>
       </div>
     </div>
     <div class="subnavigation">
@@ -109,8 +110,16 @@
         </div>
       </div> <!-- row -->
     </div> <!-- Content -->
-    <div class="footer">
-      Ga <a href="#top">terug naar boven</a>
-    </div>
+    <p class="footer elevator-button">Hys die pagina omhoog</p>
+      <script>
+        // Elevator script included on the page, already.
+        window.onload = function() {
+          var elevator = new Elevator({
+            element: document.querySelector('.elevator-button'),
+            mainAudio: '../site/assets/audio/elevator.mp3',
+            endAudio: '../site/assets/audio/ding.mp3'
+          });
+        }
+    </script>
   </body>
 </html>
