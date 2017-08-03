@@ -142,6 +142,12 @@ function resetToMenu() {
     curView = 0
 }
 
+$(".main-container").on("click", function(event) {
+  if (curView != 0) {
+    resetToMenu();
+  }
+});
+
 
 (function ( $ ) {
 
