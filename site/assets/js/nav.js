@@ -2,9 +2,11 @@
 $(document).ready(function(){
 
   curView = 0
+  loading = false
 
   $("#north-link").click(function(event){
     if (curView == 0) {
+      loading = true;
       $(".main-container").css({
         'top' : '50%'
       });
@@ -16,11 +18,16 @@ $(document).ready(function(){
       $("#title").fadeOut(250);
       $('.indexLink').addClass('disable');
       curView = 1;
+      setTimeout(function(){
+        loading = false;
+      }, 100);
     }
+
   });
 
   $("#east-link").click(function(event){
     if (curView == 0) {
+      loading = true
       $(".main-container").css({
         'left' : '-50%'
       });
@@ -32,11 +39,15 @@ $(document).ready(function(){
       $("#title").fadeOut(250);
       $('.indexLink').addClass('disable');
       curView = 2
+      setTimeout(function(){
+        loading = false;
+      }, 100);
     }
   });
 
   $("#south-link").on("click", function(event){
     if (curView == 0) {
+      loading = true;
       $(".main-container").css({
         'top' : '-50%'
       });
@@ -47,11 +58,15 @@ $(document).ready(function(){
       $("#title").fadeOut(250);
       $('.indexLink').addClass('disable');
       curView = 3
+      setTimeout(function(){
+        loading = false;
+      }, 100);
     }
   });
 
   $("#west-link").click(function(event){
     if (curView == 0) {
+      loading = true;
       $(".main-container").css({
         'left' : '50%'
       });
@@ -63,8 +78,17 @@ $(document).ready(function(){
       $("#title").fadeOut(250);
       $('.indexLink').addClass('disable');
       curView = 4
+      setTimeout(function(){
+        loading = false;
+      }, 100);
     }
   });
+
+  $(".main-container").on("click", function(e){
+    if (curView != 0 && loading == false) {
+      resetToMenu();
+    }
+  })
 
   // $(".links").click(function(event){
   //   if (curView != 0) {
@@ -142,11 +166,6 @@ function resetToMenu() {
     curView = 0
 }
 
-$(".main-container").on("click", function(event) {
-  if (curView != 0) {
-    resetToMenu();
-  }
-});
 
 
 (function ( $ ) {
