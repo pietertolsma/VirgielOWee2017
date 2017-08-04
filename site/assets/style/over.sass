@@ -128,16 +128,24 @@ body
     padding: 20px
     margin: 0
     color: #fffdea
+
 .virgielfm
   position: fixed
-  top: 0
+  transition: opacity .2s
   right: 0
+  top: 50px
   z-index: 100
-  margin: 0
+  @media screen and (max-width: 800px)
+    top: 0
   img
-    width: 200px
-    z-index: 100
-    height: auto
+    height: 70px
+    width: auto
+    transition: opacity .3s
+    opacity: 0.8
+  img:hover
+    opacity: 0.4
+    cursor: pointer
+
 .footer
   width: 250px
   margin: 0
