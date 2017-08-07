@@ -1,1 +1,14 @@
-<svg id="Laag_1" data-name="Laag 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 465.49 367.26"><defs><style>.cls-1{fill:#0e5358;}.cls-2{fill:#082b31;}.cls-3{fill:none;}</style></defs><title>pijltjelos</title><polyline class="cls-1" points="144.28 296.13 233.13 212.2 234.34 42.15 144.28 296.13"/><polyline class="cls-2" points="320.78 296.63 234.46 41.96 233.15 212 320.78 296.63"/><circle class="cls-3" cx="233.2" cy="184.09" r="143.16" transform="translate(-30.82 47.85) rotate(-10.99)"/></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Laag_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 465.5 367.3" style="enable-background:new 0 0 465.5 367.3;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#0E5358;}
+	.st1{fill:#082B31;}
+	.st2{fill:none;}
+</style>
+<title>pijltjelos</title>
+<polyline class="st0" points="126,322.4 233.3,221.1 234.7,15.8 126,322.4 "/>
+<polyline class="st1" points="339.1,323 234.9,15.6 233.3,220.8 339.1,323 "/>
+<ellipse transform="matrix(0.9817 -0.1906 0.1906 0.9817 -30.821 47.8327)" class="st2" cx="233.2" cy="184.1" rx="143.2" ry="143.2"/>
+</svg>
