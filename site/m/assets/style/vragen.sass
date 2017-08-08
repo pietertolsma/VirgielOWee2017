@@ -3,20 +3,48 @@
 body
   background-color: $green
   color: $white
-  box-shadow: inset 5px 0px 20px #888888
+  // box-shadow: inset 5px 0px 20px #888888
 
-div
-  padding-top: 25px
-  margin-left: 80px
-  margin-right: 28%
+.questionBox
+  //background-color: THE QUESTION WILL EXPAND TO OUTSIDE THIS DIV
+  position: absolute
+  min-height: 100%
+  width: 100%
+  left: 0
+  right: 0
+  top: 10%
+  bottom: 0
+  //background-color: blue
+  display: inline-block
+
+ul
+    list-style-type: none
+    padding: 0
+
+li
+    margin: 0
+    padding: 0em
+
+.arrow
+  height: 1.5em
 
 h2
+  padding-left: 4%
   font-family: $main-font
   font-weight: normal
-  font-size: 2em
+  font-size: 1.2em
+  display: inline-block
+  margin-bottom: 5px
 
-p
-  font-family: sans-serif
+.answer
+  font-family: $secondary-font
+  font-size: 1em
+  display: none
+  margin: 10px
 
-#vragenEind
-  padding-bottom: 150px
+.QHeader
+  transition: opacity 0.2s
+
+.QHeader:hover
+  cursor: pointer
+  opacity: 0.6
