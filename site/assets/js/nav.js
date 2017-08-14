@@ -10,7 +10,7 @@ $(document).ready(function(){
       $(".main-container").css({
         'top' : '50%'
       });
-      $('.virgielfm, #socialmedia, .sponsors').css({
+      $('.virgielfm, #socialmedia, .sponsors, .inschrijven').css({
         'opacity' : '0'
       });
       $(".overlay").css({'opacity' : '1'});
@@ -32,7 +32,7 @@ $(document).ready(function(){
       $(".main-container").css({
         'left' : '-50%'
       });
-      $('.virgielfm, #socialmedia, .sponsors').css({
+      $('.virgielfm, #socialmedia, .sponsors, .inschrijven').css({
         'opacity' : '0'
       });
       $(".overlay").css({'opacity' : '1'});
@@ -53,7 +53,7 @@ $(document).ready(function(){
       $(".main-container").css({
         'top' : '-50%'
       });
-      $('.virgielfm, #socialmedia, .sponsors').css({
+      $('.virgielfm, #socialmedia, .sponsors, .inschrijven').css({
         'opacity' : '0'
       });
       $(".overlay").css({'opacity' : '1'})
@@ -73,7 +73,7 @@ $(document).ready(function(){
       $(".main-container").css({
         'left' : '50%'
       });
-      $('.virgielfm, #socialmedia, .sponsors').css({
+      $('.virgielfm, #socialmedia, .sponsors, .inschrijven').css({
         'opacity' : '0'
       });
       $(".overlay").css({'opacity' : '1'})
@@ -141,6 +141,10 @@ $(document).ready(function(){
     }
   });
 
+$(".question").click(function(){
+  alert("Per dag zijn er een beperkt aantal inschrijvingen. Wil je zeker zijn van een plek? Zorg dan dat je op tijd bent op het eerstvolgende inschrijfmoment!");
+})
+
 function resetToMenu() {
     console.log("Resetting menu, curview: " + curView);
 
@@ -148,7 +152,7 @@ function resetToMenu() {
       'top' : '0',
       'left' : '0'
     });
-    $('.virgielfm, #socialmedia, .sponsors').css({
+    $('.virgielfm, #socialmedia, .sponsors, .inschrijven').css({
       'opacity' : '1'
     });
     $(".virgielfm").show();
