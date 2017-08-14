@@ -16,6 +16,7 @@ $(document).ready(function(){
       $(".overlay").css({'opacity' : '1'});
       $(".northPage").css({'top' : '-50%'});
       $(".virgielfm").hide();
+      $(".inschrijven").hide();
       $("#title").fadeOut(250);
       $('.indexLink').addClass('disable');
       curView = 1;
@@ -38,6 +39,7 @@ $(document).ready(function(){
       $(".overlay").css({'opacity' : '1'});
       $(".eastPage").css({'right' : '-50%'});
       $(".virgielfm").hide();
+      $(".inschrijven").hide();
       $("#title").fadeOut(250);
       $('.indexLink').addClass('disable');
       curView = 2
@@ -59,6 +61,7 @@ $(document).ready(function(){
       $(".overlay").css({'opacity' : '1'})
       $("#title").fadeOut(250);
       $(".virgielfm").hide();
+      $(".inschrijven").hide();
       $('.indexLink').addClass('disable');
       curView = 3
       setTimeout(function(){
@@ -79,6 +82,7 @@ $(document).ready(function(){
       $(".overlay").css({'opacity' : '1'})
       $(".westPage").css({'left' : '-50%'})
       $(".virgielfm").hide();
+      $(".inschrijven").hide();
       $("#title").fadeOut(250);
       $('.indexLink').addClass('disable');
       curView = 4
@@ -156,6 +160,7 @@ function resetToMenu() {
       'opacity' : '1'
     });
     $(".virgielfm").show();
+    $(".inschrijven").show();
     $(".overlay").css({'opacity' : '0.75'})
     $("#title").fadeIn(200);
     $('.indexLink').removeClass('disable');
