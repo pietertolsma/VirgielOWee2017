@@ -142,7 +142,7 @@ $(document).ready(function(){
   });
 
 $(".question").click(function(){
-  alert("Per dag zijn er een beperkt aantal inschrijvingen. Wil je zeker zijn van een plek? Zorg dan dat je op tijd bent op het eerstvolgende inschrijfmoment!");
+  alert("Per dag is er een beperkt aantal inschrijvingen. Wil je zeker zijn van een plek? Zorg dan dat je op tijd bent op het eerstvolgende inschrijfmoment!");
 })
 
 function resetToMenu() {
