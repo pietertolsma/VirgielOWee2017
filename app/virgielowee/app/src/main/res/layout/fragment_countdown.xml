@@ -1,0 +1,29 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="nl.virgiel.virgielowee.CountdownFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:textSize="30sp"
+        android:layout_height="wrap_content"
+        android:id="@+id/countdown_text"
+        android:text="@string/hello_blank_fragment"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:id="@+id/countdown_event_text"
+        android:gravity="center_horizontal"
+        android:textSize="25sp"
+        android:text="Pre Owee Countdown!"
+        android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</FrameLayout>

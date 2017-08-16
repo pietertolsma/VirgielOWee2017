@@ -146,7 +146,8 @@ $(document).ready(function(){
   });
 
 $(".question").click(function(){
-  alert("Per dag is er een beperkt aantal inschrijvingen. Wil je zeker zijn van een plek? Zorg dan dat je op tijd bent op het eerstvolgende inschrijfmoment!");
+  alert("Per dag is er een beperkt aantal inschrijvingen. Wil je zeker zijn van een plek? Zorg dan dat je op tijd bent op het eerstvolgende inschrijfmoment!\
+   Je kan je inschrijven op de sociëteit: Oude Delft 57.");
 })
 
 function resetToMenu() {
