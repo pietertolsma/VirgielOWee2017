@@ -18,7 +18,7 @@ public class MainActivity extends FragmentActivity implements GoogleApiClient.Co
         GoogleApiClient.OnConnectionFailedListener {
 
     private GoogleApiClient mGoogleApiClient;
-    private LocationService mLocationService;
+    private CompassService mCompassService;
     private CompassFragment mCompassFragment;
     private CountdownFragment mCountdownFragment;
 
@@ -49,10 +49,9 @@ public class MainActivity extends FragmentActivity implements GoogleApiClient.Co
                 .build();
 
         setContentView(R.layout.activity_main);
+        mCompassService = new CompassService(this, mCompassFragment, mGoogleApiClient);
 
-        mLocationService = new LocationService(this, mGoogleApiClient, mCompassFragment);
-
-        Location loc = mLocationService.getLastLocation();
+//        Location loc = mLocationService.getLastLocation();
 
         if (findViewById(R.id.compass_container) != null && findViewById(R.id.countdown_container) != null) {
             if (savedInstanceState != null) return;
@@ -82,8 +81,8 @@ public class MainActivity extends FragmentActivity implements GoogleApiClient.Co
 
     }
 
-    public LocationService getLocationService() {
-        return mLocationService;
-    }
+//    public LocationService getLocationService() {
+//        return mLocationService;
+//    }
 
 }
