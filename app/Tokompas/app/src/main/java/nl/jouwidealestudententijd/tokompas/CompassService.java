@@ -1,4 +1,8 @@
-package nl.virgiel.virgielowee;
+package nl.jouwidealestudententijd.tokompas;
+
+/**
+ * Created by buijn on 17/08/2017.
+ */
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -7,7 +11,6 @@ import android.hardware.SensorManager;
 import android.location.Location;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -17,43 +20,33 @@ import static java.lang.Math.atan2;
 import static java.lang.Math.cos;
 import static java.lang.Math.sin;
 
-/**
- * Created by pietertolsma on 5/24/17.
- */
-
 public class CompassService implements SensorEventListener {
 
     private MainActivity context;
     private SensorManager mSensorManager;
     private Sensor mAccelerometer;
     private Sensor mMagnetometer;
-    private float mCurrentDegree = 0f;
-    private CompassFragment mCompassFragment;
-    private LocationService mLocationService;
+    private float mCurrentDegreeVirgiel = 0f;
+    private float mCurrentDegreeHome = 0f;
+    public LocationService mLocationService;
     private Location virgielLocation = new Location("");
     private double lastSin = 0f;
     private double lastCos = 0f;
 
     private float[] mGravity;
-    private float[] mGeomagnatic;
+    private float[] mGeomagnetic;
 
-    float ALPHA = 0.9f;
+    float ALPHA = 0.95f;
 
-    public CompassService(MainActivity activity, CompassFragment compassFragment, GoogleApiClient client) {
+    public CompassService(MainActivity activity, GoogleApiClient client) {
         context = activity;
         mLocationService = new LocationService(activity, client);
         mSensorManager = (SensorManager) context.getSystemService(SENSOR_SERVICE);
         mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mMagnetometer = mSensorManager.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
-        mCompassFragment = compassFragment;
         virgielLocation.setLatitude(52.0077);
         virgielLocation.setLongitude(4.3588);
         onResume();
-    }
-
-
-    public float getCurrentDegree() {
-        return mCurrentDegree;
     }
 
     protected void onResume() {
@@ -66,27 +59,6 @@ public class CompassService implements SensorEventListener {
         mSensorManager.unregisterListener(this, mMagnetometer);
     }
 
-//    @Override
-//    public void onSensorChanged(SensorEvent event) {
-//
-//        float oldAzi = mCurrentDegree;
-//        if (event.sensor == mAccelerometer) {
-//            System.arraycopy(event.values, 0, mLastAccelerometer, 0, event.values.length);
-//            mLastAccelerometerSet = true;
-//        } else if (event.sensor == mMagnetometer) {
-//            System.arraycopy(event.values, 0, mLastMagnetometer, 0, event.values.length);
-//            mLastMagnetometerSet = true;
-//        }
-//        if (mLastAccelerometerSet && mLastMagnetometerSet) {
-//            SensorManager.getRotationMatrix(mR, null, mLastAccelerometer, mLastMagnetometer);
-//            SensorManager.getOrientation(mR, mOrientation);
-//            float azimuthInRadians = mOrientation[0];
-//            float azimuthInDegress = (float)(Math.toDegrees(azimuthInRadians)+360)%360;
-//            mCurrentDegree = -azimuthInDegress;
-//        }
-//        //if (Math.abs(oldAzi - mCurrentDegree) > 4) context.getLocationService().update();
-//    }
-
     @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.sensor == mAccelerometer) {
@@ -94,36 +66,48 @@ public class CompassService implements SensorEventListener {
             mGravity = lowPass(event.values.clone(), mGravity);
         } else if (event.sensor == mMagnetometer) {
 //            System.arraycopy(event.values, 0, mLastMagnetometer, 0, event.values.length);
-            mGeomagnatic = lowPass(event.values.clone(), mGeomagnatic);
+            mGeomagnetic = lowPass(event.values.clone(), mGeomagnetic);
         }
-        if (mGravity != null && mGeomagnatic != null) {
+        if (mGravity != null && mGeomagnetic != null) {
             float R[] = new float[9];
             float I[] = new float[9];
 
-            boolean success = SensorManager.getRotationMatrix(R, I, mGravity, mGeomagnatic);
+            boolean success = SensorManager.getRotationMatrix(R, I, mGravity, mGeomagnetic);
             if(success) {
                 float orientation[] = new float[3];
                 SensorManager.getOrientation(R, orientation);
                 float azimuthInRadians = orientation[0];
                 float azimuthInDegress = (float)(Math.toDegrees(azimuthInRadians)+360)%360;
 
-                float bearingToLocation = (float) ((float) mLocationService.getBearingToLocation(virgielLocation)*180/Math.PI);
+                float bearingToLocationVirgiel = (float) ((float) mLocationService.getBearingToLocation(virgielLocation)*180/Math.PI);
+                if(MainActivity.homeLocation != null) {
+                    float bearingToLocationHome = (float) ((float) mLocationService.getBearingToLocation(MainActivity.homeLocation)*180/Math.PI);
+                    float newDirectionHome = azimuthInDegress - bearingToLocationHome;
 
-                float newDirection = azimuthInDegress - bearingToLocation;
-                mCompassFragment.testHolder1.setText(Float.toString((float) (newDirection)));
+                    RotateAnimation ra2 = new RotateAnimation(mCurrentDegreeHome, (float) smoothenAngle(newDirectionHome), Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 
+                    ra2.setDuration(500);
+                    ra2.setFillAfter(true);
+
+                    MainActivity.mHomeArrowImageView.startAnimation(ra2);
+                    mCurrentDegreeHome = -newDirectionHome;
+                }
+
+                float newDirectionVirgiel = azimuthInDegress - bearingToLocationVirgiel;
 
                 mGravity = null;
-                mGeomagnatic = null;
+                mGeomagnetic = null;
 
-                RotateAnimation ra = new RotateAnimation(mCurrentDegree, (float) smoothenAngle(newDirection), Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
+                RotateAnimation ra1 = new RotateAnimation(mCurrentDegreeVirgiel, (float) smoothenAngle(newDirectionVirgiel), Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
 
-                ra.setDuration(500);
-                ra.setFillAfter(true);
+                ra1.setDuration(500);
+                ra1.setFillAfter(true);
 
-                mCompassFragment.mArrowImageView.startAnimation(ra);
 
-                mCurrentDegree = -newDirection;
+
+                MainActivity.mVirgielArrowImageView.startAnimation(ra1);
+
+                mCurrentDegreeVirgiel = -newDirectionVirgiel;
             }
         }
     }
